@@ -1,0 +1,1112 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FIFA World Cup 2026 – Prediksi Skor</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,600;14..32,700;14..32,800;14..32,900&display=swap" rel="stylesheet" />
+
+    <style>
+        /* ===== RESET & BASE ===== */
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #0b0e14;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            background-image:
+                radial-gradient(ellipse at 20% 50%, rgba(255, 215, 0, 0.06) 0%, transparent 60%),
+                radial-gradient(ellipse at 80% 20%, rgba(255, 215, 0, 0.04) 0%, transparent 50%),
+                radial-gradient(ellipse at 50% 100%, rgba(255, 215, 0, 0.03) 0%, transparent 40%);
+        }
+
+        /* ===== MAIN CONTAINER ===== */
+        .container {
+            max-width: 860px;
+            width: 100%;
+            background: linear-gradient(165deg, #131a24 0%, #0d121c 100%);
+            border-radius: 32px;
+            padding: 32px 28px 40px;
+            box-shadow:
+                0 30px 80px rgba(0, 0, 0, 0.8),
+                0 0 0 1px rgba(255, 215, 0, 0.08) inset,
+                0 0 0 1px rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 215, 0, 0.06);
+            transition: all 0.3s ease;
+        }
+
+        /* ===== HEADER ===== */
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 28px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgba(255, 215, 0, 0.10);
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .fifa-icon {
+            width: 44px;
+            height: 44px;
+            background: linear-gradient(135deg, #f5c842, #d4a020);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 900;
+            font-size: 18px;
+            color: #0b0e14;
+            box-shadow: 0 4px 16px rgba(255, 215, 0, 0.25);
+            letter-spacing: -0.5px;
+        }
+
+        .header-title {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .header-title .fifa {
+            font-weight: 900;
+            font-size: 20px;
+            letter-spacing: 2px;
+            color: #f5c842;
+            text-shadow: 0 0 30px rgba(255, 215, 0, 0.15);
+            line-height: 1.1;
+        }
+
+        .header-title .worldcup {
+            font-weight: 700;
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.5);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .header-title .year {
+            font-weight: 800;
+            font-size: 24px;
+            color: #ffffff;
+            letter-spacing: 1px;
+            line-height: 1;
+            margin-top: -2px;
+        }
+
+        .header-badge {
+            background: rgba(255, 215, 0, 0.08);
+            border: 1px solid rgba(255, 215, 0, 0.12);
+            padding: 6px 16px;
+            border-radius: 100px;
+            font-size: 11px;
+            font-weight: 700;
+            color: #f5c842;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            white-space: nowrap;
+        }
+
+        /* ===== MATCH CARD ===== */
+        .match-card {
+            background: linear-gradient(145deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.01));
+            border-radius: 24px;
+            padding: 28px 24px 24px;
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            margin-bottom: 32px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .match-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(255, 215, 0, 0.03), transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .match-card::after {
+            content: '';
+            position: absolute;
+            bottom: -40%;
+            left: -10%;
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, rgba(255, 215, 0, 0.02), transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        /* Teams */
+        .teams {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px 24px;
+            margin-bottom: 18px;
+            position: relative;
+            z-index: 1;
+            flex-wrap: wrap;
+        }
+
+        .team {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 4px;
+            min-width: 110px;
+        }
+
+        .team .flag-logo {
+            width: 64px;
+            height: 64px;
+            object-fit: contain;
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.04);
+            padding: 4px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .team .player-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 2px;
+        }
+
+        .team .player-img {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid rgba(255, 215, 0, 0.15);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+            background: #1a1f2a;
+            transition: all 0.3s ease;
+        }
+
+        .team .player-img:hover {
+            transform: scale(1.04);
+            border-color: #f5c842;
+        }
+
+        .team .player-name {
+            font-size: 12px;
+            font-weight: 700;
+            color: rgba(255, 255, 255, 0.75);
+            margin-top: 4px;
+            letter-spacing: 0.3px;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        .team .name {
+            font-weight: 800;
+            font-size: 22px;
+            color: #ffffff;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            text-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
+            margin-top: 2px;
+        }
+
+        .team .federation {
+            font-size: 10px;
+            font-weight: 700;
+            color: rgba(255, 255, 255, 0.25);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .team .federation-code {
+            font-size: 13px;
+            font-weight: 800;
+            color: rgba(255, 255, 255, 0.40);
+            letter-spacing: 1px;
+        }
+
+        .vs-divider {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2px;
+            padding: 0 8px;
+        }
+
+        .vs-divider .vs {
+            font-weight: 900;
+            font-size: 26px;
+            color: #f5c842;
+            text-shadow: 0 0 30px rgba(255, 215, 0, 0.2);
+            letter-spacing: 1px;
+        }
+
+        .vs-divider .line {
+            width: 40px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.2), transparent);
+        }
+
+        /* Match Info */
+        .match-info {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 16px 28px;
+            padding-top: 16px;
+            border-top: 1px solid rgba(255, 255, 255, 0.04);
+            position: relative;
+            z-index: 1;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.55);
+        }
+
+        .info-item .label {
+            font-weight: 400;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            font-size: 10px;
+            color: rgba(255, 255, 255, 0.30);
+        }
+
+        .info-item .value {
+            font-weight: 700;
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 13px;
+        }
+
+        .info-item .value.gold {
+            color: #f5c842;
+        }
+
+        .info-item .icon {
+            font-size: 14px;
+            opacity: 0.5;
+        }
+
+        .group-badge {
+            background: rgba(255, 215, 0, 0.06);
+            border: 1px solid rgba(255, 215, 0, 0.08);
+            padding: 4px 16px;
+            border-radius: 100px;
+            font-size: 10px;
+            font-weight: 700;
+            color: #f5c842;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        /* ===== PREDICTION SECTION ===== */
+        .prediction-section {
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 20px;
+            padding: 24px 20px 28px;
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            margin-bottom: 28px;
+        }
+
+        .prediction-title {
+            font-size: 13px;
+            font-weight: 700;
+            color: rgba(255, 255, 255, 0.40);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-align: center;
+            margin-bottom: 18px;
+        }
+
+        .prediction-title span {
+            color: #f5c842;
+        }
+
+        .score-inputs {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .score-group {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .score-group .team-label {
+            font-size: 11px;
+            font-weight: 700;
+            color: rgba(255, 255, 255, 0.30);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .score-group .team-label .flag-sm {
+            font-size: 16px;
+            vertical-align: middle;
+            margin-right: 4px;
+        }
+
+        .score-input-wrapper {
+            position: relative;
+        }
+
+        /*
+            ============================================================
+            FIX: Input number — hilangkan tombol panah (spin buttons)
+            ============================================================
+        */
+        .score-input-wrapper input[type="number"] {
+            /* Standar modern */
+            appearance: textfield;
+            /* Firefox */
+            -moz-appearance: textfield;
+            width: 72px;
+            height: 64px;
+            text-align: center;
+            font-size: 32px;
+            font-weight: 800;
+            font-family: 'Inter', sans-serif;
+            background: rgba(255, 255, 255, 0.04);
+            border: 2px solid rgba(255, 255, 255, 0.06);
+            border-radius: 16px;
+            color: #ffffff;
+            outline: none;
+            transition: all 0.3s ease;
+            caret-color: #f5c842;
+        }
+
+        /* Sembunyikan spinner di Chrome, Safari, Edge */
+        .score-input-wrapper input[type="number"]::-webkit-outer-spin-button,
+        .score-input-wrapper input[type="number"]::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        .score-input-wrapper input[type="number"]:focus {
+            border-color: rgba(255, 215, 0, 0.35);
+            background: rgba(255, 255, 255, 0.06);
+            box-shadow: 0 0 30px rgba(255, 215, 0, 0.04);
+        }
+
+        .score-input-wrapper input[type="number"]::placeholder {
+            color: rgba(255, 255, 255, 0.10);
+            font-size: 20px;
+        }
+
+        .score-vs {
+            font-weight: 900;
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.12);
+            padding: 0 4px;
+            user-select: none;
+        }
+
+        .submit-btn {
+            display: block;
+            width: 100%;
+            max-width: 280px;
+            margin: 20px auto 0;
+            padding: 14px 32px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 800;
+            font-size: 15px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #0b0e14;
+            background: linear-gradient(135deg, #f5c842, #d4a020);
+            border: none;
+            border-radius: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 24px rgba(255, 215, 0, 0.20);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 40px rgba(255, 215, 0, 0.30);
+        }
+
+        .submit-btn:active {
+            transform: translateY(0px);
+            box-shadow: 0 4px 16px rgba(255, 215, 0, 0.15);
+        }
+
+        .submit-btn:disabled {
+            opacity: 0.4;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        /* ===== PREDICTIONS LIST ===== */
+        .predictions-list {
+            margin-top: 8px;
+        }
+
+        .list-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 14px;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .list-header h3 {
+            font-size: 13px;
+            font-weight: 700;
+            color: rgba(255, 255, 255, 0.35);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .list-header .count {
+            font-size: 12px;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.20);
+            background: rgba(255, 255, 255, 0.04);
+            padding: 2px 12px;
+            border-radius: 100px;
+        }
+
+        .predictions-table-wrap {
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            background: rgba(255, 255, 255, 0.01);
+        }
+
+        .predictions-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 13px;
+        }
+
+        .predictions-table thead {
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .predictions-table th {
+            padding: 12px 14px;
+            text-align: left;
+            font-weight: 700;
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: rgba(255, 255, 255, 0.20);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+        }
+
+        .predictions-table td {
+            padding: 12px 14px;
+            color: rgba(255, 255, 255, 0.70);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.02);
+            font-weight: 400;
+        }
+
+        .predictions-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .predictions-table tr:hover td {
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .predictions-table .score-cell {
+            font-weight: 700;
+            color: #ffffff;
+            letter-spacing: 0.5px;
+        }
+
+        .predictions-table .score-cell .dash {
+            color: rgba(255, 255, 255, 0.15);
+            margin: 0 4px;
+        }
+
+        .predictions-table .empty-row td {
+            text-align: center;
+            padding: 28px 14px;
+            color: rgba(255, 255, 255, 0.12);
+            font-size: 13px;
+            font-weight: 400;
+            letter-spacing: 0.5px;
+        }
+
+        .empty-row .emoji {
+            display: block;
+            font-size: 28px;
+            margin-bottom: 8px;
+            opacity: 0.4;
+        }
+
+        /* ===== TOAST ===== */
+        .toast {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%) translateY(100px);
+            background: rgba(20, 28, 40, 0.95);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 215, 0, 0.10);
+            padding: 14px 28px;
+            border-radius: 16px;
+            font-size: 14px;
+            font-weight: 600;
+            color: #ffffff;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+            opacity: 0;
+            pointer-events: none;
+            z-index: 999;
+            text-align: center;
+            max-width: 90%;
+        }
+
+        .toast.show {
+            opacity: 1;
+            transform: translateX(-50%) translateY(0);
+        }
+
+        .toast .gold {
+            color: #f5c842;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 700px) {
+            .container {
+                padding: 20px 16px 28px;
+                border-radius: 24px;
+            }
+
+            .header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
+            }
+
+            .header-badge {
+                align-self: flex-start;
+                font-size: 9px;
+                padding: 4px 12px;
+            }
+
+            .header-title .fifa {
+                font-size: 17px;
+            }
+            .header-title .year {
+                font-size: 20px;
+            }
+
+            .match-card {
+                padding: 20px 14px 18px;
+            }
+
+            .teams {
+                gap: 8px 16px;
+            }
+
+            .team .name {
+                font-size: 17px;
+            }
+            .team .flag-logo {
+                width: 50px;
+                height: 50px;
+            }
+            .team .player-img {
+                width: 50px;
+                height: 50px;
+            }
+            .team .player-name {
+                font-size: 10px;
+            }
+            .vs-divider .vs {
+                font-size: 20px;
+            }
+
+            .team {
+                min-width: 80px;
+            }
+
+            .match-info {
+                gap: 10px 16px;
+                font-size: 12px;
+            }
+            .info-item .value {
+                font-size: 12px;
+            }
+
+            .score-input-wrapper input[type="number"] {
+                width: 60px;
+                height: 54px;
+                font-size: 26px;
+            }
+            .score-vs {
+                font-size: 14px;
+            }
+
+            .submit-btn {
+                font-size: 13px;
+                padding: 12px 24px;
+                max-width: 100%;
+            }
+
+            .predictions-table {
+                font-size: 12px;
+            }
+            .predictions-table th,
+            .predictions-table td {
+                padding: 10px 10px;
+            }
+
+            .prediction-section {
+                padding: 18px 14px 20px;
+            }
+
+            .toast {
+                font-size: 13px;
+                padding: 12px 20px;
+                bottom: 20px;
+            }
+        }
+
+        @media (max-width: 450px) {
+            .teams {
+                gap: 6px 10px;
+            }
+            .team .name {
+                font-size: 14px;
+            }
+            .team .flag-logo {
+                width: 40px;
+                height: 40px;
+            }
+            .team .player-img {
+                width: 40px;
+                height: 40px;
+            }
+            .team .player-name {
+                font-size: 9px;
+            }
+            .vs-divider .vs {
+                font-size: 16px;
+            }
+            .score-input-wrapper input[type="number"] {
+                width: 50px;
+                height: 46px;
+                font-size: 22px;
+            }
+            .score-vs {
+                font-size: 12px;
+            }
+            .container {
+                padding: 14px 10px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ===== MAIN CONTAINER ===== -->
+    <div class="container">
+
+        <!-- HEADER -->
+        <header class="header">
+            <div class="header-left">
+                <div class="fifa-icon">⚽</div>
+                <div class="header-title">
+                    <span class="fifa">FIFA</span>
+                    <span class="worldcup">World Cup</span>
+                    <span class="year">2026</span>
+                </div>
+            </div>
+            <div class="header-badge">Piala Dunia 2026</div>
+        </header>
+
+        <!-- MATCH CARD -->
+        <div class="match-card">
+            <div class="teams">
+                <!-- Team Norge -->
+                <div class="team">
+                    <img class="flag-logo" src="https://flagcdn.com/no.svg" alt="Bendera Norwegia" loading="lazy" />
+                    <div class="player-wrapper">
+                        <img class="player-img" src="https://i.pinimg.com/736x/ce/50/11/ce501119ee511632164ac11c0f211d5b.jpg" alt="Erling Haaland" loading="lazy" />
+                        <span class="player-name">Erling Haaland</span>
+                    </div>
+                    <span class="name">Norge</span>
+                    <span class="federation">NFF</span>
+                    <span class="federation-code">NOR</span>
+                </div>
+
+                <div class="vs-divider">
+                    <span class="vs">VS</span>
+                    <span class="line"></span>
+                </div>
+
+                <!-- Team France -->
+                <div class="team">
+                    <img class="flag-logo" src="https://flagcdn.com/fr.svg" alt="Bendera Prancis" loading="lazy" />
+                    <div class="player-wrapper">
+                        <img class="player-img" src="https://i.pinimg.com/736x/e8/65/5a/e8655a75b4fa2f85f64796348be24b18.jpg" alt="Kylian Mbappé" loading="lazy" />
+                        <span class="player-name">Kylian Mbappé</span>
+                    </div>
+                    <span class="name">France</span>
+                    <span class="federation">FFF</span>
+                    <span class="federation-code">FRA</span>
+                </div>
+            </div>
+
+            <div class="match-info">
+                <span class="info-item">
+                    <span class="icon">🏟️</span>
+                    <span class="label">Venue</span>
+                    <span class="value gold">Gillette Stadium</span>
+                    <span style="font-size:10px;color:rgba(255,255,255,0.2);">(Boston)</span>
+                </span>
+                <span class="info-item">
+                    <span class="icon">📅</span>
+                    <span class="label">Tanggal</span>
+                    <span class="value">Sabtu, 27 Juni 2026</span>
+                </span>
+                <span class="info-item">
+                    <span class="icon">⏰</span>
+                    <span class="label">Kick-off</span>
+                    <span class="value">02.00 WIB</span>
+                </span>
+                <span class="group-badge">🏆 Penentuan Juara Grup</span>
+            </div>
+        </div>
+
+        <!-- PREDICTION SECTION -->
+        <div class="prediction-section">
+            <div class="prediction-title">
+                🔮 <span>Prediksi Skor</span> · Masukkan tebakan Anda
+            </div>
+
+            <div class="score-inputs">
+                <div class="score-group">
+                    <span class="team-label"><span class="flag-sm">🇳🇴</span> Norge</span>
+                    <div class="score-input-wrapper">
+                        <input type="number" id="homeScore" min="0" max="99" placeholder="0" inputmode="numeric" />
+                    </div>
+                </div>
+
+                <span class="score-vs">⚡</span>
+
+                <div class="score-group">
+                    <span class="team-label"><span class="flag-sm">🇫🇷</span> France</span>
+                    <div class="score-input-wrapper">
+                        <input type="number" id="awayScore" min="0" max="99" placeholder="0" inputmode="numeric" />
+                    </div>
+                </div>
+            </div>
+
+            <button class="submit-btn" id="submitBtn" type="button">Kirim Prediksi</button>
+        </div>
+
+        <!-- PREDICTIONS LIST -->
+        <div class="predictions-list">
+            <div class="list-header">
+                <h3>📋 Daftar Prediksi</h3>
+                <span class="count" id="predictionCount">0 prediksi</span>
+            </div>
+
+            <div class="predictions-table-wrap">
+                <table class="predictions-table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>🇳🇴 Norge</th>
+                            <th style="text-align:center;">VS</th>
+                            <th>🇫🇷 France</th>
+                            <th style="text-align:right;">Waktu</th>
+                        </tr>
+                    </thead>
+                    <tbody id="predictionsBody">
+                        <tr class="empty-row">
+                            <td colspan="5">
+                                <span class="emoji">⚽</span>
+                                Belum ada prediksi. Jadilah yang pertama!
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- TOAST -->
+    <div class="toast" id="toast"></div>
+
+    <script>
+        // ============================================================
+        //  DATA
+        //  Disimpan secara PERSISTEN & PRIBADI memakai window.storage
+        //  (shared = false), jadi prediksi tetap ada walau halaman
+        //  dimuat ulang, dan hanya Anda yang bisa melihatnya.
+        // ============================================================
+        const STORAGE_KEY = 'wc2026_predictions';
+        let predictions = [];
+        let storageReady = false;
+
+        // ============================================================
+        //  DOM REFS
+        // ============================================================
+        const homeInput = document.getElementById('homeScore');
+        const awayInput = document.getElementById('awayScore');
+        const submitBtn = document.getElementById('submitBtn');
+        const tbody = document.getElementById('predictionsBody');
+        const countEl = document.getElementById('predictionCount');
+        const toastEl = document.getElementById('toast');
+
+        // ============================================================
+        //  LOAD / SAVE (persisten via window.storage, pribadi)
+        // ============================================================
+        async function loadPredictions() {
+            try {
+                const result = await window.storage.get(STORAGE_KEY, false);
+                if (result && result.value) {
+                    const parsed = JSON.parse(result.value);
+                    predictions = Array.isArray(parsed) ? parsed : [];
+                }
+            } catch (_) {
+                // Key belum ada / belum pernah disimpan — itu normal di pemakaian pertama.
+                predictions = [];
+            }
+            storageReady = true;
+        }
+
+        async function savePredictions() {
+            try {
+                await window.storage.set(STORAGE_KEY, JSON.stringify(predictions), false);
+            } catch (_) {
+                showToast('⚠️ Gagal menyimpan prediksi. Coba lagi.');
+            }
+        }
+
+        // ============================================================
+        //  RENDER
+        // ============================================================
+        function renderLoading() {
+            tbody.innerHTML = '';
+            const tr = document.createElement('tr');
+            tr.className = 'empty-row';
+            const td = document.createElement('td');
+            td.colSpan = 5;
+            td.textContent = 'Memuat prediksi…';
+            tr.appendChild(td);
+            tbody.appendChild(tr);
+        }
+
+        function render() {
+            // Clear
+            tbody.innerHTML = '';
+
+            if (predictions.length === 0) {
+                tbody.innerHTML = `
+                        <tr class="empty-row">
+                            <td colspan="5">
+                                <span class="emoji">⚽</span>
+                                Belum ada prediksi. Jadilah yang pertama!
+                            </td>
+                        </tr>
+                    `;
+                countEl.textContent = '0 prediksi';
+                return;
+            }
+
+            // Sort by newest first
+            const sorted = [...predictions].reverse();
+
+            sorted.forEach((p, idx) => {
+                const tr = document.createElement('tr');
+                const num = predictions.length - idx;
+
+                const dateStr = p.timestamp
+                    ? new Date(p.timestamp).toLocaleString('id-ID', {
+                        day: '2-digit',
+                        month: 'short',
+                        hour: '2-digit',
+                        minute: '2-digit'
+                    })
+                    : '—';
+
+                // FIX: gunakan textContent untuk sel yang berisi data
+                // dinamis agar tidak rentan terhadap masalah HTML-injection,
+                // alih-alih menyusun semuanya lewat innerHTML.
+                const tdNum = document.createElement('td');
+                tdNum.style.color = 'rgba(255,255,255,0.25)';
+                tdNum.style.fontWeight = '600';
+                tdNum.textContent = num;
+
+                const tdHome = document.createElement('td');
+                tdHome.style.fontWeight = '600';
+                tdHome.style.color = '#fff';
+                tdHome.textContent = p.home;
+
+                const tdDash = document.createElement('td');
+                tdDash.style.textAlign = 'center';
+                tdDash.style.color = 'rgba(255,255,255,0.12)';
+                tdDash.style.fontWeight = '300';
+                tdDash.textContent = '—';
+
+                const tdAway = document.createElement('td');
+                tdAway.style.fontWeight = '600';
+                tdAway.style.color = '#fff';
+                tdAway.textContent = p.away;
+
+                const tdDate = document.createElement('td');
+                tdDate.style.textAlign = 'right';
+                tdDate.style.fontSize = '11px';
+                tdDate.style.color = 'rgba(255,255,255,0.25)';
+                tdDate.textContent = dateStr;
+
+                tr.append(tdNum, tdHome, tdDash, tdAway, tdDate);
+                tbody.appendChild(tr);
+            });
+
+            countEl.textContent = `${predictions.length} prediksi`;
+        }
+
+        // ============================================================
+        //  TOAST
+        // ============================================================
+        let toastTimer = null;
+
+        function showToast(message, isGold = false, scoreText = '') {
+            // FIX: bangun isi toast dengan aman tanpa innerHTML untuk
+            // bagian dinamis (scoreText datang dari input pengguna).
+            toastEl.textContent = '';
+            toastEl.append(document.createTextNode(message + ' '));
+            if (isGold && scoreText) {
+                const span = document.createElement('span');
+                span.className = 'gold';
+                span.textContent = scoreText;
+                toastEl.appendChild(span);
+            }
+            toastEl.className = 'toast show';
+            clearTimeout(toastTimer);
+            toastTimer = setTimeout(() => {
+                toastEl.className = 'toast';
+            }, 3200);
+        }
+
+        // ============================================================
+        //  SUBMIT
+        // ============================================================
+        async function handleSubmit() {
+            if (!storageReady) return;
+
+            const homeVal = parseInt(homeInput.value, 10);
+            const awayVal = parseInt(awayInput.value, 10);
+
+            // Validate
+            if (isNaN(homeVal) || isNaN(awayVal)) {
+                showToast('⚠️ Masukkan skor yang valid untuk kedua tim.');
+                return;
+            }
+            if (homeVal < 0 || awayVal < 0 || homeVal > 99 || awayVal > 99) {
+                showToast('⚠️ Skor harus antara 0–99.');
+                return;
+            }
+
+            submitBtn.disabled = true;
+
+            // Save
+            predictions.push({
+                home: homeVal,
+                away: awayVal,
+                timestamp: Date.now()
+            });
+            await savePredictions();
+            render();
+
+            // Clear inputs
+            homeInput.value = '';
+            awayInput.value = '';
+            homeInput.focus();
+
+            submitBtn.disabled = false;
+            showToast('✅ Prediksi', true, `${homeVal} — ${awayVal}`);
+        }
+
+        // ============================================================
+        //  ENTER KEY
+        // ============================================================
+        function onEnter(e) {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                handleSubmit();
+            }
+        }
+
+        // ============================================================
+        //  INIT
+        // ============================================================
+        async function init() {
+            renderLoading();
+            submitBtn.disabled = true;
+            await loadPredictions();
+            render();
+            submitBtn.disabled = false;
+
+            // Events
+            submitBtn.addEventListener('click', handleSubmit);
+            homeInput.addEventListener('keydown', onEnter);
+            awayInput.addEventListener('keydown', onEnter);
+
+            // Auto-focus
+            homeInput.focus();
+
+            console.log('🏆 FIFA World Cup 2026 — Prediksi Skor');
+            console.log(`📊 ${predictions.length} prediksi dimuat.`);
+        }
+
+        init();
+
+        // Prevent negative sign
+        homeInput.addEventListener('input', function() {
+            if (this.value.startsWith('-')) this.value = '';
+        });
+        awayInput.addEventListener('input', function() {
+            if (this.value.startsWith('-')) this.value = '';
+        });
+    </script>
+
+</body>
+</html>
